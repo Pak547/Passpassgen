@@ -44,41 +44,85 @@ if (specChar === true){
 */
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-var length = prompt("Password Length 8-128")
-var specChar = prompt("Special Characters? yes/no")
-var lowerCase = prompt("Include Lowercase? yes/no")
-var upperCase = prompt("Include Uppercase? yes/no")
-var numeric = prompt("Include Numbers? yes/no")
-var yes = true;
-var no = false;
-function userInput(){
-  if(specChar === true){
-    specChar(Math.random(Math.floor))
+generateBtn = document.querySelector("#generate");
+
+char = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"]
+specArray = ['!',`"`,"#","$","%","&","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]
+nums = ["0","1","2","3","4","5","6","7","8","9"]
+
+const userInput = {
+  length: prompt(
+    "Password Length 8-128"
+    ),
+  specChar: prompt(
+    "Special Characters? Yes/No"
+    ),
+  lowerCase: prompt(
+    "Include Lowercase? Yes/No"
+    ),
+  upperCase: prompt(
+    "Include Uppercase? Yes/No"
+    ),
+  numeric: prompt(
+    "Include Numbers? Yes/No"
+    ),
+
+  yes: true,
+  no: false
+};
+
+function capitalize(){
+  userInput = userInput.toUpper();
+}
+function yesnolimit() {
+
+  if(userInput.yes === !yes || userInput.no === !no) {
+    return;
   }
+
+}
+
+function lengthlimit() {
+
+  if (userInput.length < 8 && userInput.length > 128) {
+  return;
+
+}
+}
+
+if (userInput.specChar === true){
+    const index = Math.floor(Math.random(specArray) * specArray.length)
+
+  }
+
+if (userInput.lowerCase === true){
+  const index = Math.floor(Math.random(char) * char.length)
+
+}
+
+if (userInput.upperCase === true){
+  const index = Math.floor(Math.random(char) * char.length)
+}
+
+if (userInput.numeric === true){
+  const index = Math.floor(Math.random(numeric) * numeric.length)
+}
+// kept at .length to add to later
+for (i=0;char.length;i++){
+  const index = Math.floor(Math.random)
 }
 
 // to do next time, write out booleans and learn math random syntax
 // Write password to the #password input  
 // make a function for password length
 function writePassword() {
-  var password = generatePassword();
+  let password = "";
+  const passwordText = document.querySelector("#password");
+
   passwordText.value = password;
-
-  var passwordText = document.querySelector("#password");
-
-    char = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"],
-    specChar = ['!',`"`,"#","$","%","&","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"],
-    nums = ["0","1","2","3","4","5","6","7","8","9"]
-
-  
-  for (i=0; passwordText.length;i++) {
-    var generatePassword[] = passwordText [Math.floor(Math.random)]
-  }
-  return ; 
 }
 //generatePassword is a variable that holds the password after its generated 
-console.log()
+
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword,char, specChar, nums) 
+generateBtn.addEventListener("click", writePassword, yesnolimit, lengthlimit,) 
 
