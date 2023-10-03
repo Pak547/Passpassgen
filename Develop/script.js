@@ -14,26 +14,45 @@
 
 /*
 if (specChar === true){
+  specChar.length(math.random (math.floor))
   console.log("they want special char true")
 } else {
   console.log("they dont want spec char false")
 }
 */
-passwordText = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z",'!',`"`,"#","$","%","&","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]
+char = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"]
+specChar = ['!',`"`,"#","$","%","&","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]
+nums = ["0","1","2","3","4","5","6","7","8","9"]
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+
+var passwordText = {
+  char: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"],
+  specChar: ['!',`"`,"#","$","%","&","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"],
+  nums: ["0","1","2","3","4","5","6","7","8","9"]
+}
+
+
+// Write password to the #password input  
+function writePassword(generatePassword) {
+  var password = generatePassword(passwordText);
   passwordText.value = password;
 
   var passwordText = document.querySelector("#password");
 
-  // i cant use an array for special characters?? 
-  // string instead idk i wanna try array again
-
+  var passwordText = {
+    char: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"],
+    specChar: ['!',`"`,"#","$","%","&","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"],
+    nums: ["0","1","2","3","4","5","6","7","8","9"]
+  }
+  
+  for (i=0; passwordText.length;i++) {
+    var generatePassword = passwordText [Math.floor(Math.random)]
+  }
+  return ; 
 }
-
+//generatePassword is a variable that holds the password after its generated 
 console.log()
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword,char, specChar, nums)
+

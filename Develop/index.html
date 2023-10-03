@@ -25,7 +25,22 @@
           ></textarea>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button id="generate" onclick="" class="btn">Generate Password</button><br>
+        <form>
+          <input type="checkbox" id="special-characters" name="boolean-1" value="specChar">
+          <label for="special-characters">Include Special Characters</label><br>
+          
+          <input type="checkbox" id="numbers" name="boolean-2" value="nums">
+          <label for="numbers">Include Numbers</label><br>
+
+          <input type="checkbox" id="upper-case" name="boolean-3" value="upper">
+          <label for="upper-case">Include Uppercase Letters</label><br>
+
+          <label for="passRange">Password Length</label>
+          <input type="range" min="1" max="30" id="passRange" name="password-length" value="10">
+          <input type="number" min="1" max="30" id="passNum" name="password-number" value="10">
+         
+        </form>
         </div>
       </div>
     </div>
